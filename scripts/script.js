@@ -1,4 +1,3 @@
-// 현재 방 상태
 let currentRoom = 'north';
 const rooms = ['north', 'east', 'south', 'west'];
 const roomImages = {
@@ -21,14 +20,10 @@ function moveRight() {
 function changeRoom(newRoom) {
   currentRoom = newRoom;
   document.getElementById('current-room').src = roomImages[newRoom];
-  
-  // 모든 방의 객체들을 숨김
   document.getElementById('north-objects').style.display = 'none';
   document.getElementById('south-objects').style.display = 'none';
   document.getElementById('east-objects').style.display = 'none';
   document.getElementById('west-objects').style.display = 'none';
-  
-  // 현재 방의 객체들만 표시
   document.getElementById(newRoom + '-objects').style.display = 'block';}
 
 
@@ -39,7 +34,6 @@ function changeRoom(newRoom) {
 
 
 
-// ---------- Inventory helpers ----------
 function addToInventory(imageSrc) {
   var slots = document.querySelectorAll('#inventory .inventory-slot.empty');
   if (!slots || slots.length === 0) return;
@@ -50,14 +44,12 @@ function addToInventory(imageSrc) {
   slot.appendChild(img);
   slot.classList.remove('empty');}
 
-// ---------- Inventory selection (highlight in red) ----------
 document.addEventListener('DOMContentLoaded', function() {
   var inventory = document.getElementById('inventory');
   if (!inventory) return;
   inventory.addEventListener('click', function(e) {
     var slot = e.target.closest('.inventory-slot');
     if (!slot) return;
-    // 단일 선택 유지
     document.querySelectorAll('#inventory .inventory-slot.selected').forEach(function(s){
       s.classList.remove('selected');
     });
@@ -67,7 +59,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// ----- Overlay helpers -----
+
+
+
 function openOverlay(src) {var overlay = document.getElementById('overlay');
   var img = document.getElementById('overlay-image');
   img.src = src;
@@ -78,13 +72,12 @@ function closeOverlay() {var overlay = document.getElementById('overlay');
   img.src = '';
   overlay.style.display = 'none';}
 
-// 오버레이 클릭 진행 로직
 document.addEventListener('DOMContentLoaded', function() {
   var overlay = document.getElementById('overlay');
   var overlayImage = document.getElementById('overlay-image');
   if (overlayImage) {
     overlayImage.addEventListener('click', function() {
-      // Drawer 로직
+      // Drawer
       if (window.__overlayContext === 'drawer') {
         if (window.__drawerCompleted) return; // 완료 후 추가 진행 없음
         var next = (window.__drawerStep || 0) + 1;
@@ -92,37 +85,37 @@ document.addEventListener('DOMContentLoaded', function() {
         setDrawerOverlayStep(next);
         return;
       }
-      // Closet 로직
+      // Closet
       if (window.__overlayContext === 'closet') {
         handleClosetOverlayClick();
         return;
       }
-      // Flowerpot 로직
+      // Flowerpot
       if (window.__overlayContext === 'flowerpot') {
         handleFlowerpotOverlayClick();
         return;
       }
-      // Sink 로직
+      // Sink
       if (window.__overlayContext === 'sink') {
         handleSinkOverlayClick();
         return;
       }
-      // East Vent 로직
+      // East Vent
       if (window.__overlayContext === 'eastVent') {
         handleEastVentOverlayClick();
         return;
       }
-      // West Vent 로직
+      // West Vent
       if (window.__overlayContext === 'westVent') {
         handleWestVentOverlayClick();
         return;
       }
-      // TV 로직
+      // TV
       if (window.__overlayContext === 'tv') {
         handleTVOverlayClick();
         return;
       }
-      // Orgol 로직
+      // Orgol
       if (window.__overlayContext === 'orgol') {
         handleOrgolOverlayClick();
         return;
@@ -131,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// ----- Ending sequence -----
+
 function showEnding() {
   var container = document.getElementById('game-container');
   if (!container) return;
@@ -147,7 +140,6 @@ function showEnding() {
   document.body.appendChild(white);
 
   setTimeout(function() {
-    // Replace content with ending view
     white.innerHTML = '';
     var wrapper = document.createElement('div');
     wrapper.style.display = 'flex';
