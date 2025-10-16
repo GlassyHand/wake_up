@@ -1,0 +1,45 @@
+#west-objects {position: absolute;top: 0;left: 0;right: 0;bottom: 0;pointer-events: none;}
+#west-objects > div {cursor: pointer;pointer-events: all;}
+
+
+#blue-frame {position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 280px;
+  left: 1230px;
+  z-index: 10;}
+
+#green-frame {position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 100px;
+  left: 1000px;
+  z-index: 10;}
+
+#red-frame {position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 250px;
+  left: 800px;
+  z-index: 10;}
+
+#mirror {position: absolute;
+  width: 200px;
+  height: 300px;
+  top: 120px;
+  left: 240px;
+  z-index: 9;}
+
+#sink {position: absolute;
+  width: 300px;
+  height: 200px;
+  top: 440px;
+  left: 240px;
+  z-index: 18;}
+
+#west-vent {position: absolute;
+  width: 100px;
+  height: 80px;
+  top: 690px;
+  left: 1150px;
+  z-index: 7;}

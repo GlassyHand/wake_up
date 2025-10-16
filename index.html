@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wake Up</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/north.css">
+  <link rel="stylesheet" href="css/south.css">
+  <link rel="stylesheet" href="css/east.css">
+  <link rel="stylesheet" href="css/west.css">
+</head>
+
+
+
+
+<body>
+
+  <script src="scripts/script.js"></script>
+  <script src="scripts/east.js"></script>
+  <script src="scripts/north.js"></script>
+  <script src="scripts/south.js"></script>
+  <script src="scripts/west.js"></script>
+
+
+
+  <div id="game-container">
+    <div id="middle-screen">
+      <div id="room-container">
+        <!-- 현재 방 배경 이미지 -->
+        <img src="img/north/north.png" id="current-room">
+        
+        <!-- 네비게이션 화살표 -->
+        <div id="navigation-arrows">
+          <button id="left-arrow" onclick="moveLeft()">
+            <img src="img/arrow_left.png">
+          </button>
+          <button id="right-arrow" onclick="moveRight()">
+            <img src="img/arrow_right.png">
+          </button>
+        </div>
+        
+        <!-- North Room 상호작용 요소들 -->
+        <section id="north-objects">
+          <div id="exit-door">
+            <img src="img/north/exit.png">
+          </div>
+          
+          <div id="exit-password" onclick="interactExitPassword()">
+            <img src="img/north/exitPassword.png">
+          </div>
+          
+          <div id="fallen-letter" onclick="interactFallenLetter()">
+            <img src="img/north/fallenLetter.png">
+          </div>
+          
+          <div id="flowerpot-closed" onclick="interactFlowerpot()">
+            <img src="img/north/flowerpotClosed.png">
+          </div>
+        </section>
+        
+        <!-- South Room 상호작용 요소들 -->
+        <section id="south-objects" style="display: none;">
+          <div id="drawer" onclick="interactDrawer()">
+            <img src="img/south/drawer.png">
+          </div>
+          
+          <div id="handle" onclick="interactHandle()">
+            <img src="img/south/handle.png">
+          </div>
+          
+          <div id="tv" onclick="interactTV()">
+            <img src="img/south/TV.png">
+          </div>
+        </section>
+        
+        <!-- East Room 상호작용 요소들 -->
+        <section id="east-objects" style="display: none;">
+          <div id="closet-closed" onclick="interactCloset()">
+            <img src="img/east/closetClosed.png">
+          </div>
+          
+          <div id="orgol-closed" onclick="interactOrgol()">
+            <img src="img/east/orgolClosed.png">
+          </div>
+          
+          <div id="east-vent" onclick="interactEastVent()">
+            <img src="img/east/eastVent.png">
+          </div>
+        </section>
+        
+        <!-- West Room 상호작용 요소들 -->
+        <section id="west-objects" style="display: none;">
+          <div id="blue-frame" onclick="interactBlueFrame()">
+            <img src="img/west/blueFrame.png">
+          </div>
+          
+          <div id="green-frame" onclick="interactGreenFrame()">
+            <img src="img/west/greenFrame.png">
+          </div>
+          
+          <div id="red-frame" onclick="interactRedFrame()">
+            <img src="img/west/redFrame.png">
+          </div>
+          
+          <div id="mirror" onclick="interactMirror()">
+            <img src="img/west/mirror.png">
+          </div>
+          
+          <div id="sink" onclick="interactSink()">
+            <img src="img/west/sink.png">
+          </div>
+          
+          <div id="west-vent" onclick="interactWestVent()">
+            <img src="img/west/westVent.png">
+          </div>
+        </section>
+      </div>
+    </div>
+    
+
+
+
+    <!-- 인벤토리 -->
+    <div id="inventory">
+      <div class="inventory-slot" data-item="hand">
+        <img src="img/item/item_hand.png" class="item-image" style="transform: scaleX(-1);">
+      </div>
+      <div class="inventory-slot empty"></div>
+      <div class="inventory-slot empty"></div>
+      <div class="inventory-slot empty"></div>
+      <div class="inventory-slot empty"></div>
+    </div>
+  </div>
+  
+  
+  
+  <!-- 단순 오버레이 -->
+  <div id="overlay" style="display: none;">
+    <img id="overlay-image" src="">
+    <button id="overlay-close" onclick="closeOverlay()">X</button>
+  </div>
+
+
+
+</body>
+</html>

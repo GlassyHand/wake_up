@@ -1,0 +1,31 @@
+#north-objects {position: absolute;top: 0;left: 0;right: 0;bottom: 0;pointer-events: none;}
+#north-objects > div {cursor: pointer;pointer-events: all;}
+
+
+#exit-door {position: absolute;
+  width: 655px;
+  height: 750px;
+  top: 70px;
+  left: 460px;
+  z-index: 10;}
+
+#exit-password {position: absolute;
+  width: 98px;
+  height: 107px;
+  top: 490px;
+  left: 1140px;
+  z-index: 9;}
+
+#fallen-letter {position: absolute;
+  width: 199px;
+  height: 85px;
+  top: 830px;
+  left: 300px;
+  z-index: 8;}
+
+#flowerpot-closed {position: absolute;
+  width: 156px;
+  height: 275px;
+  top: 560px;
+  left: 1260px;
+  z-index: 7;}

@@ -1,0 +1,23 @@
+#east-objects {position: absolute;top: 0;left: 0;right: 0;bottom: 0;pointer-events: none;}
+#east-objects > div {cursor: pointer;pointer-events: all;}
+
+#closet-closed {position: absolute;
+  width: 200px;
+  height: 400px;
+  top: 470px;
+  left: 830px;
+  z-index: 10;}
+
+#orgol-closed {position: absolute;
+  width: 150px;
+  height: 200px;
+  top: 395px;
+  left: 1110px;
+  z-index: 9;}
+
+#east-vent {position: absolute;
+  width: 100px;
+  height: 80px;
+  top: 690px;
+  left: 260px;
+  z-index: 8;}
