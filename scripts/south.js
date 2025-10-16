@@ -8,8 +8,8 @@ function interactDrawer() {
     window.__drawerStep = 0; // 0: zoom -> 1: opened_controller -> 2: opened & item
     setDrawerOverlayStep(0);
   }
-  
-// ---------- Drawer overlay progression ----------
+
+
 function setDrawerOverlayStep(step) {
   var overlay = document.getElementById('overlay');
   var img = document.getElementById('overlay-image');
@@ -20,7 +20,6 @@ function setDrawerOverlayStep(step) {
     img.src = 'img/south/drawer_opened_controller.png';
   } else if (step === 2) {
     img.src = 'img/south/drawer_opened.png';
-    // 아이템 지급 1회만
     if (!window.__drawerCompleted) {
       addToInventory('img/item/item_controller.png');
       window.__drawerCompleted = true;
